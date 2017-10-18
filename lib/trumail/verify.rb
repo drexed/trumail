@@ -9,7 +9,7 @@ module Trumail
     DEFAULT_HOST ||= 'https://trumail.io'
     DEFAULT_FORMAT ||= :json
 
-    attr_reader :email, :host, :format, :response
+    attr_reader :email, :host, :format, :response, :hash
 
     def initialize(email, host: DEFAULT_HOST, format: DEFAULT_FORMAT)
       @email = email
