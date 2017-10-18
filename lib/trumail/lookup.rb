@@ -4,7 +4,7 @@ require 'json'
 require 'typhoeus'
 
 module Trumail
-  class Verify
+  class Lookup
 
     DEFAULT_HOST ||= 'https://trumail.io'
     DEFAULT_FORMAT ||= :json
@@ -26,6 +26,7 @@ module Trumail
     end
 
     def verify
+      return @hash unless @response.nil?
       @response = Typhoeus.get(url).response_body
       @hash = parse_by_format
     end
@@ -38,10 +39,46 @@ module Trumail
       @hash
     end
 
+    def address
+      @hash['address']
+    end
+
+    def catch_all?
+      @hash['catchAll']
+    end
+
+    def deliverable?
+      @hash['deliverable']
+    end
+
+    def disposable?
+      @hash['disposable']
+    end
+
+    def domain
+      @hash['domain']
+    end
+
+    def full_inbox?
+      @hash['fullInbox']
+    end
+
+    def gravatar?
+      @hash['gravatar']
+    end
+
+    def host_exists?
+      @hash['hostExists']
+    end
+
+    def username
+      @hash['username']
+    end
+
     private
 
     def parse_by_format
-      return @hash if @format == :xml
+      return @hash if @response.nil? || @format == :xml
       JSON.parse(@response)
     end
 
