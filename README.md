@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/drexed/trumail.svg?branch=master)](https://travis-ci.org/drexed/trumail)
 
 API wrapper for the free and open source [Trumail](https://trumail.io) email validation/verification system.
-You can also self-host the system on your own server, find out more here: [https://github.com/sdwolfe32/trumail](https://github.com/sdwolfe32/trumail)
+You can also self-host the system on your own server. Find out more here: [https://github.com/sdwolfe32/trumail](https://github.com/sdwolfe32/trumail)
 
 ## Installation
 
@@ -24,9 +24,17 @@ Or install it yourself as:
 
 ## Usage
 ```ruby
-# Lookup
+# Basic Lookup
 lookup = Trumail::Lookup.new('test@email.com').verify
 lookup = Trumail::Lookup.verify('test@email.com')
+
+# Custom Host
+lookup = Trumail::Lookup.new('test@email.com', host: 'https://verifier.com').verify
+lookup = Trumail::Lookup.verify('test@email.com', host: 'https://verifier.com')
+
+# Custom Format
+lookup = Trumail::Lookup.new('test@email.com', format: :xml).verify
+lookup = Trumail::Lookup.verify('test@email.com', format: :xml)
 
 # Public Methods
 lookup.url          => 'https://trumail.io/json/test@email.com'
@@ -40,14 +48,6 @@ lookup.disposable?  => true
 lookup.full_inbox?  => false
 lookup.gravatar?    => true
 lookup.host_exists? => false
-
-# Custom Host
-lookup = Trumail::Lookup.new('test@email.com', host: 'https://verifier.com').verify
-lookup = Trumail::Lookup.verify('test@email.com', host: 'https://verifier.com')
-
-# Different Format
-lookup = Trumail::Lookup.new('test@email.com', format: :xml).verify
-lookup = Trumail::Lookup.verify('test@email.com', format: :xml)
 ```
 
 ## Contributing
