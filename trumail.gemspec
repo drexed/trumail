@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = %w[lib support]
 
+  spec.add_runtime_dependency 'ox'
   spec.add_runtime_dependency 'typhoeus'
 
   spec.add_development_dependency 'bundler'

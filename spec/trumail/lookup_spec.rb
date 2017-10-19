@@ -4,7 +4,8 @@ require 'spec_helper'
 
 RSpec.describe Trumail::Lookup do
   subject { Trumail::Lookup.new('test@gmail.com') }
-  let(:trumail) { Trumail::Lookup.verify('test@gmail.com') }
+  let(:trumail_json) { Trumail::Lookup.verify('test@gmail.com', format: :json) }
+  let(:trumail_xml) { Trumail::Lookup.verify('test@gmail.com', format: :xml) }
 
   let(:response_hash) do
     {
@@ -47,20 +48,27 @@ RSpec.describe Trumail::Lookup do
       subject.verify
 
       expect(subject.to_h).to eq(response_hash)
-      expect(trumail.to_h).to eq(response_hash)
+      expect(trumail_json.to_h).to eq(response_hash)
+      expect(trumail_xml.to_h).to eq(response_hash)
     end
 
     it 'returns :response_hash' do
-      expect(trumail.verify).to eq(response_hash)
+      expect(trumail_json.verify).to eq(response_hash)
+      expect(trumail_xml.verify).to eq(response_hash)
     end
   end
 
   describe '.url' do
-    url = 'https://trumail.io/json/test@gmail.com'
+    json_url = 'https://trumail.io/json/test@gmail.com'
+    xml_url = 'https://trumail.io/xml/test@gmail.com'
 
-    it "returns #{url}" do
-      expect(subject.url).to eq(url)
-      expect(trumail.url).to eq(url)
+    it "returns #{json_url}" do
+      expect(subject.url).to eq(json_url)
+      expect(trumail_json.url).to eq(json_url)
+    end
+
+    it "returns #{xml_url}" do
+      expect(trumail_xml.url).to eq(xml_url)
     end
   end
 
@@ -70,7 +78,8 @@ RSpec.describe Trumail::Lookup do
     end
 
     it 'returns :response_hash' do
-      expect(trumail.to_h).to eq(response_hash)
+      expect(trumail_json.to_h).to eq(response_hash)
+      expect(trumail_xml.to_h).to eq(response_hash)
     end
   end
 
@@ -78,7 +87,8 @@ RSpec.describe Trumail::Lookup do
     value = 'test@gmail.com'
 
     it "returns #{value.inspect}" do
-      expect(trumail.address).to eq(value)
+      expect(trumail_json.address).to eq(value)
+      expect(trumail_xml.address).to eq(value)
     end
   end
 
@@ -86,7 +96,8 @@ RSpec.describe Trumail::Lookup do
     value = false
 
     it "returns #{value.inspect}" do
-      expect(trumail.catch_all?).to eq(value)
+      expect(trumail_json.catch_all?).to eq(value)
+      expect(trumail_xml.catch_all?).to eq(value)
     end
   end
 
@@ -94,7 +105,8 @@ RSpec.describe Trumail::Lookup do
     value = false
 
     it "returns #{value.inspect}" do
-      expect(trumail.deliverable?).to eq(value)
+      expect(trumail_json.deliverable?).to eq(value)
+      expect(trumail_xml.deliverable?).to eq(value)
     end
   end
 
@@ -102,7 +114,8 @@ RSpec.describe Trumail::Lookup do
     value = false
 
     it "returns #{value.inspect}" do
-      expect(trumail.disposable?).to eq(value)
+      expect(trumail_json.disposable?).to eq(value)
+      expect(trumail_xml.disposable?).to eq(value)
     end
   end
 
@@ -110,7 +123,8 @@ RSpec.describe Trumail::Lookup do
     value = 'gmail.com'
 
     it "returns #{value.inspect}" do
-      expect(trumail.domain).to eq(value)
+      expect(trumail_json.domain).to eq(value)
+      expect(trumail_xml.domain).to eq(value)
     end
   end
 
@@ -118,7 +132,8 @@ RSpec.describe Trumail::Lookup do
     value = false
 
     it "returns #{value.inspect}" do
-      expect(trumail.full_inbox?).to eq(value)
+      expect(trumail_json.full_inbox?).to eq(value)
+      expect(trumail_xml.full_inbox?).to eq(value)
     end
   end
 
@@ -126,7 +141,8 @@ RSpec.describe Trumail::Lookup do
     value = true
 
     it "returns #{value.inspect}" do
-      expect(trumail.gravatar?).to eq(value)
+      expect(trumail_json.gravatar?).to eq(value)
+      expect(trumail_xml.gravatar?).to eq(value)
     end
   end
 
@@ -134,7 +150,8 @@ RSpec.describe Trumail::Lookup do
     value = true
 
     it "returns #{value.inspect}" do
-      expect(trumail.host_exists?).to eq(value)
+      expect(trumail_json.host_exists?).to eq(value)
+      expect(trumail_xml.host_exists?).to eq(value)
     end
   end
 
@@ -142,7 +159,8 @@ RSpec.describe Trumail::Lookup do
     value = 'test'
 
     it "returns #{value.inspect}" do
-      expect(trumail.username).to eq(value)
+      expect(trumail_json.username).to eq(value)
+      expect(trumail_xml.username).to eq(value)
     end
   end
 

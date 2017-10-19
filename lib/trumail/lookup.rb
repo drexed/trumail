@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'json'
 require 'typhoeus'
 
 module Trumail
@@ -78,8 +77,12 @@ module Trumail
     private
 
     def parse_by_format
-      return @hash if @response.nil? || @format == :xml
-      JSON.parse(@response)
+      return @hash if @response.nil?
+
+      case @format
+      when :json then Trumail::Parser::Json.parse(@response)
+      when :xml then Trumail::Parser::Xml.parse(@response)
+      end
     end
 
   end
