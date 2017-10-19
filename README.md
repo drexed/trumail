@@ -30,14 +30,14 @@ lookup = Trumail::Lookup.verify('test@email.com')
 lookup.url          => 'https://trumail.io/json/test@email.com'
 lookup.to_h         => { 'address' => 'test@email.com', 'catchAll' => true, ... }
 lookup.address      => 'test@email.com'
+lookup.username     => 'test'
+lookup.domain       => 'email.com'
 lookup.catch_all?   => true
 lookup.deliverable? => false
 lookup.disposable?  => true
-lookup.domain       => 'email.com'
 lookup.full_inbox?  => false
 lookup.gravatar?    => true
 lookup.host_exists? => false
-lookup.username     => 'test'
 
 # Host
 lookup = Trumail::Lookup.new('test@email.com', host: 'https://verifier.com').verify
