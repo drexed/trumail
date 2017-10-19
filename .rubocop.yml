@@ -4,6 +4,8 @@ AllCops:
   TargetRubyVersion: 2.4
   Exclude:
     - 'spec/**/**/*'
+Gemspec/OrderedDependencies:
+  Enabled: false
 Layout/EmptyLinesAroundClassBody:
   Enabled: false
 Layout/EmptyLinesAroundModuleBody:
@@ -12,5 +14,9 @@ LineLength:
   Max: 100
 Lint/ScriptPermission:
   Enabled: false
+Security/Eval:
+  Enabled: false
 Style/Documentation:
+  Enabled: false
+Style/RescueModifier:
   Enabled: false
