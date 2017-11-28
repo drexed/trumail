@@ -7,20 +7,6 @@ RSpec.describe Trumail::Lookup do
   let(:trumail_json) { Trumail::Lookup.verify('test@gmail.com', format: :json) }
   let(:trumail_xml) { Trumail::Lookup.verify('test@gmail.com', format: :xml) }
 
-  let(:response_hash) do
-    {
-      'address' => 'test@gmail.com',
-      'username' => 'test',
-      'domain' => 'gmail.com',
-      'hostExists' => true,
-      'deliverable' => false,
-      'fullInbox' => false,
-      'catchAll' => false,
-      'disposable' => false,
-      'gravatar' => true
-    }
-  end
-
   describe '.initialize' do
     it 'returns "test@email.com"' do
       expect(subject.email).to eq('test@gmail.com')

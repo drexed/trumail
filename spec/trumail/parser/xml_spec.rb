@@ -5,7 +5,7 @@ require 'spec_helper'
 RSpec.describe Trumail::Parser::Xml do
   subject { Trumail::Parser::Xml.new(xml_data) }
 
-  describe '.verify' do
+  describe '.parse' do
     it 'returns :response_hash' do
       subject.parse
 

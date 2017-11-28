@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'typhoeus'
+require 'user_agent_db'
 
 module Trumail
   class Lookup
@@ -8,7 +9,7 @@ module Trumail
     DEFAULT_HOST ||= 'https://trumail.io'
     DEFAULT_FORMAT ||= :json
 
-    attr_reader :email, :host, :format, :response, :hash
+    attr_reader :email, :hash, :host, :format, :response
 
     def initialize(email, host: DEFAULT_HOST, format: DEFAULT_FORMAT)
       @email = email
@@ -26,8 +27,11 @@ module Trumail
 
     def verify
       return @hash unless @response.nil?
-      @response = Typhoeus.get(url).response_body
-      @hash = parse_by_format
+
+      Typhoeus::Config.user_agent = UserAgentDB.random
+      @response = Typhoeus.get(url, accept_encoding: 'gzip,deflate').response_body
+
+      parse_by_format
     end
 
     def url
@@ -79,10 +83,10 @@ module Trumail
     def parse_by_format
       return @hash if @response.nil?
 
-      case @format
-      when :json then Trumail::Parser::Json.parse(@response)
-      when :xml then Trumail::Parser::Xml.parse(@response)
-      end
+      @hash = case @format
+              when :json then Trumail::Parser::Json.parse(@response)
+              when :xml then Trumail::Parser::Xml.parse(@response)
+              end
     end
 
   end

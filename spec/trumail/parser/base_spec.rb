@@ -11,7 +11,7 @@ RSpec.describe Trumail::Parser::Base do
     end
   end
 
-  describe '.verify' do
+  describe '.parse' do
     it 'returns :response_hash' do
       expect(Trumail::Parser::Json.parse(json_data)).to eq(response_hash)
     end

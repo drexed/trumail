@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'ox'
   spec.add_runtime_dependency 'typhoeus'
+  spec.add_runtime_dependency 'user_agent_db'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
