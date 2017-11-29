@@ -23,22 +23,25 @@ Or install it yourself as:
     $ gem install trumail
 
 ## Usage
+
+### Lookup Verification
 ```ruby
 # Basic Lookup
 lookup = Trumail::Lookup.new('test@email.com').verify
 lookup = Trumail::Lookup.verify('test@email.com')
 
 # Custom Host
-lookup = Trumail::Lookup.new('test@email.com', host: 'https://verifier.com').verify
-lookup = Trumail::Lookup.verify('test@email.com', host: 'https://verifier.com')
+lookup = Trumail::Lookup.verify('test@email.com', host: 'https://verifier.com',
+                                                  format: :xml)
+```
 
-# Custom Format
-lookup = Trumail::Lookup.new('test@email.com', format: :xml).verify
-lookup = Trumail::Lookup.verify('test@email.com', format: :xml)
+### Lookup Methods
 
-# Public Methods
+```ruby
 lookup.url          => 'https://trumail.io/json/test@email.com'
-lookup.to_h         => { 'address' => 'test@email.com', 'catchAll' => true, ... }
+lookup.hash         => { 'address' => 'test@email.com', 'catchAll' => true, ... }
+
+# Data Methods
 lookup.address      => 'test@email.com'
 lookup.username     => 'test'
 lookup.domain       => 'email.com'

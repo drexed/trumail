@@ -38,10 +38,6 @@ module Trumail
       "#{@host}/#{@format}/#{@email}"
     end
 
-    def to_h
-      @hash
-    end
-
     def address
       @hash['address']
     end

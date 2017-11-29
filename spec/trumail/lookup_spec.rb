@@ -31,11 +31,8 @@ RSpec.describe Trumail::Lookup do
 
   describe '.verify' do
     it 'returns :response_hash' do
-      subject.verify
-
-      expect(subject.to_h).to eq(response_hash)
-      expect(trumail_json.to_h).to eq(response_hash)
-      expect(trumail_xml.to_h).to eq(response_hash)
+      expect(trumail_json.hash).to eq(response_hash)
+      expect(trumail_xml.hash).to eq(response_hash)
     end
 
     it 'returns :response_hash' do
@@ -55,17 +52,6 @@ RSpec.describe Trumail::Lookup do
 
     it "returns #{xml_url}" do
       expect(trumail_xml.url).to eq(xml_url)
-    end
-  end
-
-  describe '.to_h' do
-    it 'returns {}' do
-      expect(subject.to_h).to eq({})
-    end
-
-    it 'returns :response_hash' do
-      expect(trumail_json.to_h).to eq(response_hash)
-      expect(trumail_xml.to_h).to eq(response_hash)
     end
   end
 
