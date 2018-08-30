@@ -38,6 +38,14 @@ module Trumail
       "#{@host}/v2/lookups/#{@format}?email=#{@email}"
     end
 
+    def error?
+      !success?
+    end
+
+    def success?
+      @hash.key?('address')
+    end
+
     def address
       @hash['address']
     end

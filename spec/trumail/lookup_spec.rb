@@ -65,6 +65,20 @@ RSpec.describe Trumail::Lookup do
     end
   end
 
+  describe '.success?' do
+    it 'returns true' do
+      expect(trumail_json.success?).to eq(true)
+      expect(trumail_xml.success?).to eq(true)
+    end
+  end
+
+  describe '.error?' do
+    it 'returns true' do
+      expect(trumail_json.error?).to eq(false)
+      expect(trumail_xml.error?).to eq(false)
+    end
+  end
+
   describe '.address' do
     value = 'test@gmail.com'
 

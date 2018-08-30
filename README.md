@@ -39,6 +39,8 @@ lookup = Trumail::Lookup.verify('test@email.com', host: 'https://verifier.com', 
 ```ruby
 lookup.url            => 'https://api.trumail.io/v2/lookup/json?email=test@email.com'
 lookup.hash           => { 'address' => 'test@email.com', 'catchAll' => true, ... }
+lookup.success?       => true
+lookup.error?         => false
 
 # Data Methods
 lookup.address        => 'test@email.com'
