@@ -38,13 +38,15 @@ RSpec.describe Trumail::Lookup do
   end
 
   describe '.verify' do
-    it 'returns :response_hash' do
+    it 'returns :response_hash for json format' do
       expect(trumail_json.hash).to eq(response_hash)
-      expect(trumail_xml.hash).to eq(response_hash)
+      expect(trumail_json.verify).to eq(response_hash)
     end
 
-    it 'returns :response_hash' do
-      expect(trumail_json.verify).to eq(response_hash)
+    it 'returns :response_hash for xml format' do
+      response_hash['suggestion'] = nil
+
+      expect(trumail_xml.hash).to eq(response_hash)
       expect(trumail_xml.verify).to eq(response_hash)
     end
   end
@@ -109,7 +111,7 @@ RSpec.describe Trumail::Lookup do
   end
 
   describe '.free?' do
-    value = true
+    value = false
 
     it "returns #{value.inspect}" do
       expect(trumail_json.free?).to eq(value)
@@ -127,7 +129,7 @@ RSpec.describe Trumail::Lookup do
   end
 
   describe '.gravatar?' do
-    value = true
+    value = false
 
     it "returns #{value.inspect}" do
       expect(trumail_json.gravatar?).to eq(value)
@@ -163,11 +165,12 @@ RSpec.describe Trumail::Lookup do
   end
 
   describe '.suggestion' do
-    value = ''
+    it 'returns "" for json format' do
+      expect(trumail_json.suggestion).to eq('')
+    end
 
-    it 'returns ""' do
-      expect(trumail_json.suggestion).to eq(value)
-      expect(trumail_xml.suggestion).to eq(value)
+    it 'returns nil for xml format' do
+      expect(trumail_xml.suggestion).to eq(nil)
     end
   end
 

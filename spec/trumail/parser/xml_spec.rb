@@ -9,6 +9,8 @@ RSpec.describe Trumail::Parser::Xml do
     it 'returns :response_hash' do
       subject.parse
 
+      response_hash['suggestion'] = nil
+
       expect(subject.hash).to eq(response_hash)
     end
   end

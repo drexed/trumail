@@ -9,12 +9,17 @@ module LetSupport
         "address":"test@gmail.com",
         "username":"test",
         "domain":"gmail.com",
+        "md5Hash":"xaedb8d9dc4751e229a335e371db8058",
+        "suggestion":"",
+        "free":false,
         "hostExists":true,
         "deliverable":false,
         "fullInbox":false,
         "catchAll":false,
         "disposable":false,
-        "gravatar":true
+        "gravatar":false,
+        "role":false,
+        "validFormat":true
       }
     DATA
   end
@@ -25,12 +30,17 @@ module LetSupport
         <address>test@gmail.com</address>
         <username>test</username>
         <domain>gmail.com</domain>
-        <hostExists>true</hostExists>
+        <md5Hash>xaedb8d9dc4751e229a335e371db8058</md5Hash>
+        <suggestion/>
+        <validFormat>true</validFormat>
         <deliverable>false</deliverable>
         <fullInbox>false</fullInbox>
+        <hostExists>true</hostExists>
         <catchAll>false</catchAll>
+        <gravatar>false</gravatar>
+        <role>false</role>
         <disposable>false</disposable>
-        <gravatar>true</gravatar>
+        <free>false</free>
       </lookup>
     DATA
   end
@@ -40,12 +50,17 @@ module LetSupport
       'address' => 'test@gmail.com',
       'username' => 'test',
       'domain' => 'gmail.com',
+      'md5Hash' => 'xaedb8d9dc4751e229a335e371db8058',
+      'suggestion' => '',
+      'free' => false,
       'hostExists' => true,
       'deliverable' => false,
       'fullInbox' => false,
       'catchAll' => false,
       'disposable' => false,
-      'gravatar' => true
+      'gravatar' => false,
+      'role' => false,
+      'validFormat' => true
     }
   end
 
