@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module LetManager
+module LetSupport
   extend RSpec::SharedContext
 
   let(:json_data) do

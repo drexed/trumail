@@ -6,7 +6,7 @@ require 'user_agent_db'
 module Trumail
   class Lookup
 
-    DEFAULT_HOST ||= 'https://trumail.io'
+    DEFAULT_HOST ||= 'https://api.trumail.io'
     DEFAULT_FORMAT ||= :json
 
     attr_reader :email, :hash, :host, :format, :response
@@ -35,7 +35,7 @@ module Trumail
     end
 
     def url
-      "#{@host}/#{@format}/#{@email}"
+      "#{@host}/v2/lookups/#{@format}?email=#{@email}"
     end
 
     def address
@@ -58,6 +58,10 @@ module Trumail
       @hash['domain']
     end
 
+    def free?
+      @hash['free']
+    end
+
     def full_inbox?
       @hash['fullInbox']
     end
@@ -70,8 +74,24 @@ module Trumail
       @hash['hostExists']
     end
 
+    def md5_hash
+      @hash['md5Hash']
+    end
+
+    def role?
+      @hash['role']
+    end
+
+    def suggestion
+      @hash['suggestion']
+    end
+
     def username
       @hash['username']
+    end
+
+    def valid_format?
+      @hash['validFormat']
     end
 
     private

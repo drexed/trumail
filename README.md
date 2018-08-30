@@ -31,26 +31,30 @@ lookup = Trumail::Lookup.new('test@email.com').verify
 lookup = Trumail::Lookup.verify('test@email.com')
 
 # Custom Host
-lookup = Trumail::Lookup.verify('test@email.com', host: 'https://verifier.com',
-                                                  format: :xml)
+lookup = Trumail::Lookup.verify('test@email.com', host: 'https://verifier.com', format: :xml)
 ```
 
 ### Lookup Methods
 
 ```ruby
-lookup.url          => 'https://trumail.io/json/test@email.com'
-lookup.hash         => { 'address' => 'test@email.com', 'catchAll' => true, ... }
+lookup.url            => 'https://api.trumail.io/v2/lookup/json?email=test@email.com'
+lookup.hash           => { 'address' => 'test@email.com', 'catchAll' => true, ... }
 
 # Data Methods
-lookup.address      => 'test@email.com'
-lookup.username     => 'test'
-lookup.domain       => 'email.com'
-lookup.catch_all?   => true
-lookup.deliverable? => false
-lookup.disposable?  => true
-lookup.full_inbox?  => false
-lookup.gravatar?    => true
-lookup.host_exists? => false
+lookup.address        => 'test@email.com'
+lookup.username       => 'test'
+lookup.domain         => 'email.com'
+lookup.md5_hash       => '0065537cb732045561c0d23e859710f4'
+lookup.suggestion     => ''
+lookup.catch_all?     => true
+lookup.deliverable?   => false
+lookup.disposable?    => true
+lookup.free?          => true
+lookup.full_inbox?    => false
+lookup.gravatar?      => true
+lookup.host_exists?   => false
+lookup.role?          => false
+lookup.valid_format?  => true
 ```
 
 ## Contributing

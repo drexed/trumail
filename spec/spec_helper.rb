@@ -5,8 +5,10 @@
 end
 
 spec_support_path = Pathname.new(File.expand_path('../spec/support', File.dirname(__FILE__)))
-load(spec_support_path.join('rspec/let_manager.rb'))
+
+Dir.glob(spec_support_path.join('**/*.rb'))
+   .each { |f| load(f) }
 
 RSpec.configure do |config|
-  config.include LetManager
+  config.include LetSupport
 end
