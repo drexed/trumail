@@ -18,5 +18,7 @@ Security/Eval:
   Enabled: false
 Style/Documentation:
   Enabled: false
+Style/ExpandPathArguments:
+  Enabled: false
 Style/RescueModifier:
   Enabled: false
