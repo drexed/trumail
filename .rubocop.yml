@@ -12,7 +12,7 @@ Layout/EmptyLinesAroundModuleBody:
   Enabled: false
 LineLength:
   Max: 100
-Lint/ScriptPermission:
+Lint/RescueException:
   Enabled: false
 Security/Eval:
   Enabled: false
