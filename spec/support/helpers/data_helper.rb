@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module DataHelper
+
   extend RSpec::SharedContext
 
   let(:json_data) do
@@ -9,9 +10,9 @@ module DataHelper
         "address":"test@gmail.com",
         "username":"test",
         "domain":"gmail.com",
-        "md5Hash":"xaedb8d9dc4751e229a335e371db8058",
+        "md5Hash":"1aedb8d9dc4751e229a335e371db8058",
         "suggestion":"",
-        "free":false,
+        "free":true,
         "hostExists":true,
         "deliverable":false,
         "fullInbox":false,
@@ -30,7 +31,7 @@ module DataHelper
         <address>test@gmail.com</address>
         <username>test</username>
         <domain>gmail.com</domain>
-        <md5Hash>xaedb8d9dc4751e229a335e371db8058</md5Hash>
+        <md5Hash>1aedb8d9dc4751e229a335e371db8058</md5Hash>
         <suggestion/>
         <validFormat>true</validFormat>
         <deliverable>false</deliverable>
@@ -40,7 +41,7 @@ module DataHelper
         <gravatar>false</gravatar>
         <role>false</role>
         <disposable>false</disposable>
-        <free>false</free>
+        <free>true</free>
       </lookup>
     DATA
   end
@@ -50,9 +51,9 @@ module DataHelper
       'address' => 'test@gmail.com',
       'username' => 'test',
       'domain' => 'gmail.com',
-      'md5Hash' => 'xaedb8d9dc4751e229a335e371db8058',
+      'md5Hash' => '1aedb8d9dc4751e229a335e371db8058',
       'suggestion' => '',
-      'free' => false,
+      'free' => true,
       'hostExists' => true,
       'deliverable' => false,
       'fullInbox' => false,

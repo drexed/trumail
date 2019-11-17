@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe Trumail::Parser::Base do
-  subject { Trumail::Parser::Base.new(json_data) }
+  subject { described_class.new(json_data) }
 
   describe '.initialize' do
     it 'returns {}' do

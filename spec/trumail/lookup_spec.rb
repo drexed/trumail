@@ -3,15 +3,16 @@
 require 'spec_helper'
 
 RSpec.describe Trumail::Lookup do
-  subject { Trumail::Lookup.new('test@gmail.com') }
+  subject { described_class.new('test@gmail.com') }
+
   let(:trumail_json) do
     VCR.use_cassette('json') do
-      Trumail::Lookup.verify('test@gmail.com', format: :json)
+      described_class.verify('test@gmail.com', format: :json)
     end
   end
   let(:trumail_xml) do
     VCR.use_cassette('xml') do
-      Trumail::Lookup.verify('test@gmail.com', format: :xml)
+      described_class.verify('test@gmail.com', format: :xml)
     end
   end
 
@@ -125,7 +126,7 @@ RSpec.describe Trumail::Lookup do
   end
 
   describe '.free?' do
-    value = false
+    value = true
 
     it "returns #{value.inspect}" do
       expect(trumail_json.free?).to eq(value)
@@ -164,8 +165,8 @@ RSpec.describe Trumail::Lookup do
     value = nil
 
     it 'returns not nil' do
-      expect(trumail_json.md5_hash).to_not eq(value)
-      expect(trumail_xml.md5_hash).to_not eq(value)
+      expect(trumail_json.md5_hash).not_to eq(value)
+      expect(trumail_xml.md5_hash).not_to eq(value)
     end
   end
 
