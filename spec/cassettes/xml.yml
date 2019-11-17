@@ -8,36 +8,32 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Mozilla/5.0 (X11; U; Linux i686; es-ES; rv:1.8.1.2) Gecko/20070225 Firefox/2.0.0.2
-        (Swiftfox)
+      - Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/72.0.3626.119 Safari/537.36
       Expect:
       - ''
   response:
     status:
       code: 200
-      message: OK
+      message: ''
     headers:
       Date:
-      - Thu, 30 Aug 2018 01:36:52 GMT
+      - Sun, 17 Nov 2019 23:12:05 GMT
       Content-Type:
       - application/xml; charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
       Set-Cookie:
-      - __cfduid=df0706b644fadd30988eff3eb8f3ebd4c1535593011; expires=Fri, 30-Aug-19
-        01:36:51 GMT; path=/; domain=.trumail.io; HttpOnly; Secure
+      - __cfduid=d913b03ceeac5c6f238cee25ec08773f41574032323; expires=Mon, 16-Nov-20
+        23:12:03 GMT; path=/; domain=.trumail.io; HttpOnly; Secure
       Strict-Transport-Security:
       - max-age=0
       X-Powered-By:
-      - PHP/5.6.32
+      - PHP/7.2.18
       Access-Control-Allow-Origin:
       - "*"
       Expires:
       - Mon, 26 Jul 1997 05:00:00 GMT
       Last-Modified:
-      - Thu, 30 Aug 2018 01:36:51 GMT
+      - Sun, 17 Nov 2019 23:12:04 GMT
       Cache-Control:
       - no-store, no-cache, must-revalidate
       - post-check=0, pre-check=0
@@ -52,19 +48,21 @@ http_interactions:
       P3p:
       - CP="ALL IND DSP COR ADM CONo CUR CUSo IVAo IVDo PSA PSD TAI TELo OUR SAMo
         CNT COM INT NAV ONL PHY PRE PUR UNI"
+      Cf-Cache-Status:
+      - DYNAMIC
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Cf-Ray:
-      - 4523875f182bb949-MIA
+      - 53756328ebb4d4e8-MIA
       Content-Encoding:
       - gzip
     body:
       encoding: UTF-8
       string: |-
         <?xml version="1.0"?>
-        <lookup><address>test@gmail.com</address><username>test</username><domain>gmail.com</domain><md5Hash>xaedb8d9dc4751e229a335e371db8058</md5Hash><suggestion/><validFormat>true</validFormat><deliverable>false</deliverable><fullInbox>false</fullInbox><hostExists>true</hostExists><catchAll>false</catchAll><gravatar>false</gravatar><role>false</role><disposable>false</disposable><free>false</free></lookup>
+        <lookup><address>test@gmail.com</address><username>test</username><domain>gmail.com</domain><md5Hash>1aedb8d9dc4751e229a335e371db8058</md5Hash><suggestion/><validFormat>true</validFormat><deliverable>false</deliverable><fullInbox>false</fullInbox><hostExists>true</hostExists><catchAll>false</catchAll><gravatar>false</gravatar><role>false</role><disposable>false</disposable><free>true</free></lookup>
     http_version: 
-  recorded_at: Thu, 30 Aug 2018 01:36:52 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Sun, 17 Nov 2019 23:12:05 GMT
+recorded_with: VCR 5.0.0

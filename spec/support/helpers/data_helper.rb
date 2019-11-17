@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module LetSupport
+module DataHelper
   extend RSpec::SharedContext
 
   let(:json_data) do

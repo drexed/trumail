@@ -8,36 +8,32 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Mozilla/5.0 ArchLinux (X11; Linux x86_64) AppleWebKit/535.1 (KHTML, like Gecko)
-        Chrome/13.0.782.41 Safari/535.1
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/72.0.3626.109 Safari/537.36
       Expect:
       - ''
   response:
     status:
       code: 200
-      message: OK
+      message: ''
     headers:
       Date:
-      - Thu, 30 Aug 2018 01:36:50 GMT
+      - Sun, 17 Nov 2019 23:12:03 GMT
       Content-Type:
       - application/json; charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
       Set-Cookie:
-      - __cfduid=d10f6a23848f907d8131667ed6609c6091535593009; expires=Fri, 30-Aug-19
-        01:36:49 GMT; path=/; domain=.trumail.io; HttpOnly; Secure
+      - __cfduid=dcc7c95c76bcecf654cae85576f1ab4c81574032322; expires=Mon, 16-Nov-20
+        23:12:02 GMT; path=/; domain=.trumail.io; HttpOnly; Secure
       Strict-Transport-Security:
       - max-age=0
       X-Powered-By:
-      - PHP/5.6.32
+      - PHP/7.2.18
       Access-Control-Allow-Origin:
       - "*"
       Expires:
       - Mon, 26 Jul 1997 05:00:00 GMT
       Last-Modified:
-      - Thu, 30 Aug 2018 01:36:49 GMT
+      - Sun, 17 Nov 2019 23:12:02 GMT
       Cache-Control:
       - no-store, no-cache, must-revalidate
       - post-check=0, pre-check=0
@@ -52,17 +48,19 @@ http_interactions:
       P3p:
       - CP="ALL IND DSP COR ADM CONo CUR CUSo IVAo IVDo PSA PSD TAI TELo OUR SAMo
         CNT COM INT NAV ONL PHY PRE PUR UNI"
+      Cf-Cache-Status:
+      - DYNAMIC
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Cf-Ray:
-      - 452387527cf6b949-MIA
+      - 5375631e59f0d4e8-MIA
       Content-Encoding:
       - gzip
     body:
       encoding: UTF-8
-      string: '{"address":"test@gmail.com","username":"test","domain":"gmail.com","md5Hash":"xaedb8d9dc4751e229a335e371db8058","suggestion":"","validFormat":true,"deliverable":false,"fullInbox":false,"hostExists":true,"catchAll":false,"gravatar":false,"role":false,"disposable":false,"free":false}'
+      string: '{"address":"test@gmail.com","username":"test","domain":"gmail.com","md5Hash":"1aedb8d9dc4751e229a335e371db8058","suggestion":"","validFormat":true,"deliverable":false,"fullInbox":false,"hostExists":true,"catchAll":false,"gravatar":false,"role":false,"disposable":false,"free":true}'
     http_version: 
-  recorded_at: Thu, 30 Aug 2018 01:36:51 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Sun, 17 Nov 2019 23:12:04 GMT
+recorded_with: VCR 5.0.0

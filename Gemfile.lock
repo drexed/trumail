@@ -1,0 +1,89 @@
+PATH
+  remote: .
+  specs:
+    trumail (2.1.0)
+      agents
+      ox
+      typhoeus
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    agents (0.1.4)
+    ast (2.4.0)
+    colorize (0.8.1)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
+    diff-lcs (1.3)
+    ethon (0.12.0)
+      ffi (>= 1.3.0)
+    fasterer (0.8.0)
+      colorize (~> 0.7)
+      ruby_parser (>= 3.14.1)
+    ffi (1.11.2)
+    hashdiff (1.0.0)
+    jaro_winkler (1.5.4)
+    ox (2.11.0)
+    parallel (1.19.0)
+    parser (2.6.5.0)
+      ast (~> 2.4.0)
+    public_suffix (4.0.1)
+    rainbow (3.0.0)
+    rake (13.0.1)
+    rspec (3.9.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
+    rspec-core (3.9.0)
+      rspec-support (~> 3.9.0)
+    rspec-expectations (3.9.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-mocks (3.9.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-support (3.9.0)
+    rubocop (0.76.0)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.6)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-performance (1.5.1)
+      rubocop (>= 0.71.0)
+    rubocop-rspec (1.36.0)
+      rubocop (>= 0.68.1)
+    ruby-progressbar (1.10.1)
+    ruby_parser (3.14.1)
+      sexp_processor (~> 4.9)
+    safe_yaml (1.0.5)
+    sexp_processor (4.13.0)
+    typhoeus (1.3.1)
+      ethon (>= 0.9.0)
+    unicode-display_width (1.6.0)
+    vcr (5.0.0)
+    webmock (3.7.6)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler
+  fasterer
+  rake
+  rspec
+  rubocop
+  rubocop-performance
+  rubocop-rspec
+  trumail!
+  vcr
+  webmock
+
+BUNDLED WITH
+   1.17.3

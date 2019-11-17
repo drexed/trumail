@@ -1,13 +1,24 @@
 sudo: false
 language: ruby
+cache: bundler
 rvm:
-  - ruby-head
+- 2.5
+- 2.6
+- ruby-head
+matrix:
+  fast_finish: true
+  allow_failures:
+  - rvm: ruby-head
 before_install:
-  - sudo apt-get install libxml2-dev
-  - gem update --system
-  - gem install bundler
-  - bundle install
+- gem update --system
+- gem install bundler
+install:
+- bundle install --jobs=3 --retry=3
 script:
-  - bundle exec rake
+- bundle exec rspec
+- bundle exec rubocop
+- bundle exec fasterer
 notifications:
-  disable: true
+  email: false
+  slack:
+    secure: 4BWoAwrMe6DHIihi/xWoTZ2mEkkIcqKsR+vZYZVcXDWBwJU+dEZ6grGmGQLnyz4tH0X49riq62pF/YgcaE7QVODzfBGwKZavkp1VPRBiWhNf9+U4/O6r1WrTJs9BYN5TrTwrWg356RVtEciHMiq6qpm7YBHdFtn2YmcTBx2M4ZGiYtNwXLPDWGF2+uy0ur+V0/ey/mrn2u3BKZp4RY3dNuftEKEIkaCGjiZSuutnaeLh7/cMoOAqJ5JJM9Tjsx1+8Zsa8gx3lhmFwNAWMS1UWVG2SY0vqU95u9PUiP2fH/vlLozdI0DCDKciJdGwHZuzgX0pU1DGxzON/iaHda3w880t2OdgCV8UUlT2EPvF0JO3DCSsnrIUMc172GghOkezz4KmSG/lmKn43LrncFM9LJe7RXZHG/m6rC8y1ftVAnS1Mmpqtxis+n236pSjej7Yu+LKTlvkrurZ9b1Ji6vY73pYHwAwLCIYxGWmKYvabETg3noxHjAdx/uQspHty5HshBxWKRWG5Y2xGEQ2XDV/18Qubsqk38oliMf0AX9z2UrX1nvUAE0UfcEslrf6asaVWNPJB9N6zc9k2IVTMQrTR4gZ6rLMdSHPDr0XaBwvEKlogHOD3l50x8VAwkGTq234IDyMM18MNMW3DIjHT/bbbdlNYEleccL3RhcFfe6cpzM=
