@@ -11,7 +11,6 @@ module Trumail
         @hash = Ox.load(@data, mode: :hash_no_attrs)
                   .dig(:lookup)
                   .each_with_object({}) do |(key, val), hash|
-
                     hash[key.to_s] = begin
                                        eval(val)
                                      rescue StandardError, SyntaxError

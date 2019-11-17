@@ -3,11 +3,11 @@
 require 'spec_helper'
 
 RSpec.describe Trumail::Parser::Base do
-  subject { described_class.new(json_data) }
+  let(:klass) { described_class.new(json_data) }
 
   describe '.initialize' do
     it 'returns {}' do
-      expect(subject.hash).to eq({})
+      expect(klass.hash).to eq({})
     end
   end
 

@@ -18,6 +18,8 @@ Metrics/BlockLength:
     - '*.gemspec'
 Metrics/LineLength:
   Max: 100
+RSpec/MultipleExpectations:
+  Enabled: false
 Style/Documentation:
   Enabled: false
 Style/ExpandPathArguments:

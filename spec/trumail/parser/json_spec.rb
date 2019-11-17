@@ -3,13 +3,13 @@
 require 'spec_helper'
 
 RSpec.describe Trumail::Parser::Json do
-  subject { described_class.new(json_data) }
+  let(:klass) { described_class.new(json_data) }
 
   describe '.parse' do
     it 'returns :response_hash' do
-      subject.parse
+      klass.parse
 
-      expect(subject.hash).to eq(response_hash)
+      expect(klass.hash).to eq(response_hash)
     end
   end
 

@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 RSpec.describe Trumail::Lookup do
-  subject { described_class.new('test@gmail.com') }
+  let(:klass) { described_class.new('test@gmail.com') }
 
   let(:trumail_json) do
     VCR.use_cassette('json') do
@@ -18,23 +18,23 @@ RSpec.describe Trumail::Lookup do
 
   describe '.initialize' do
     it 'returns "test@email.com"' do
-      expect(subject.email).to eq('test@gmail.com')
+      expect(klass.email).to eq('test@gmail.com')
     end
 
     it 'returns "https://api.trumail.io"' do
-      expect(subject.host).to eq('https://api.trumail.io')
+      expect(klass.host).to eq('https://api.trumail.io')
     end
 
     it 'returns :json' do
-      expect(subject.format).to eq(:json)
+      expect(klass.format).to eq(:json)
     end
 
     it 'returns nil' do
-      expect(subject.response).to eq(nil)
+      expect(klass.response).to eq(nil)
     end
 
     it 'returns {}' do
-      expect(subject.hash).to eq({})
+      expect(klass.hash).to eq({})
     end
   end
 
@@ -57,7 +57,7 @@ RSpec.describe Trumail::Lookup do
     xml_url = 'https://api.trumail.io/v2/lookups/xml?email=test@gmail.com'
 
     it "returns #{json_url}" do
-      expect(subject.url).to eq(json_url)
+      expect(klass.url).to eq(json_url)
       expect(trumail_json.url).to eq(json_url)
     end
 
