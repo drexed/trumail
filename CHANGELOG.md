@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.1.0] - 2019-11-17
 ### Added
+- Added ruby 2.7 support
 - Added CHANGELOG.md
 ### Changed
 - Swap `user_agent_db` for `agents` gem

@@ -2,7 +2,8 @@ require:
   - rubocop-performance
   - rubocop-rspec
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 2.7
+  NewCops: enable
   DisplayCopNames: true
   DisplayStyleGuide: true
 Layout/EmptyLinesAroundAttributeAccessor:
@@ -31,14 +32,4 @@ RSpec/MultipleExpectations:
 Style/Documentation:
   Enabled: false
 Style/ExpandPathArguments:
-  Enabled: false
-Style/ExponentialNotation:
-  Enabled: true
-Style/HashEachMethods:
-  Enabled: true
-Style/HashTransformKeys:
-  Enabled: true
-Style/HashTransformValues:
-  Enabled: true
-Style/SlicingWithRange:
   Enabled: false

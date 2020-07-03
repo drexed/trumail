@@ -8,8 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/72.0.3626.109 Safari/537.36
+      - Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko
       Expect:
       - ''
   response:
@@ -18,25 +17,20 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Sun, 17 Nov 2019 23:12:03 GMT
+      - Fri, 03 Jul 2020 15:55:17 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Set-Cookie:
-      - __cfduid=dcc7c95c76bcecf654cae85576f1ab4c81574032322; expires=Mon, 16-Nov-20
-        23:12:02 GMT; path=/; domain=.trumail.io; HttpOnly; Secure
-      Strict-Transport-Security:
-      - max-age=0
+      - __cfduid=d66b4ba7d48813eb507f4e89b5a7a8cc71593791714; expires=Sun, 02-Aug-20
+        15:55:14 GMT; path=/; domain=.trumail.io; HttpOnly; SameSite=Lax; Secure
       X-Powered-By:
-      - PHP/7.2.18
+      - PHP/7.3.11
       Access-Control-Allow-Origin:
       - "*"
       Expires:
       - Mon, 26 Jul 1997 05:00:00 GMT
-      Last-Modified:
-      - Sun, 17 Nov 2019 23:12:02 GMT
       Cache-Control:
-      - no-store, no-cache, must-revalidate
-      - post-check=0, pre-check=0
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
       Pragma:
       - no-cache
       Access-Control-Allow-Methods:
@@ -48,19 +42,25 @@ http_interactions:
       P3p:
       - CP="ALL IND DSP COR ADM CONo CUR CUSo IVAo IVDo PSA PSD TAI TELo OUR SAMo
         CNT COM INT NAV ONL PHY PRE PUR UNI"
+      Strict-Transport-Security:
+      - max-age=0
+      Last-Modified:
+      - Fri, 03 Jul 2020 15:55:15 GMT
       Cf-Cache-Status:
       - DYNAMIC
+      Cf-Request-Id:
+      - 03b6fcae3e0000ef06229f3200000001
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Server:
       - cloudflare
       Cf-Ray:
-      - 5375631e59f0d4e8-MIA
+      - 5ad1ca29fb24ef06-MIA
       Content-Encoding:
       - gzip
     body:
       encoding: UTF-8
-      string: '{"address":"test@gmail.com","username":"test","domain":"gmail.com","md5Hash":"1aedb8d9dc4751e229a335e371db8058","suggestion":"","validFormat":true,"deliverable":false,"fullInbox":false,"hostExists":true,"catchAll":false,"gravatar":false,"role":false,"disposable":false,"free":true}'
-    http_version: 
-  recorded_at: Sun, 17 Nov 2019 23:12:04 GMT
-recorded_with: VCR 5.0.0
+      string: '{"Message":"Rate limit exceeded - If you''d like a higher request volume
+        please contact sales@emailchecker.com"}'
+  recorded_at: Fri, 03 Jul 2020 15:55:17 GMT
+recorded_with: VCR 6.0.0
