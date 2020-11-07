@@ -6,6 +6,8 @@ AllCops:
   NewCops: enable
   DisplayCopNames: true
   DisplayStyleGuide: true
+Gemspec/RequiredRubyVersion:
+  Enabled: false
 Layout/EmptyLinesAroundAttributeAccessor:
   Enabled: true
 Layout/EmptyLinesAroundBlockBody:

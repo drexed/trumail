@@ -8,8 +8,8 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/605.1.15 (KHTML,
-        like Gecko) Version/12.0.2 Safari/605.1.15
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/72.0.3626.109 Safari/537.36
       Expect:
       - ''
   response:
@@ -18,12 +18,12 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Fri, 03 Jul 2020 15:55:20 GMT
+      - Sat, 07 Nov 2020 05:15:01 GMT
       Content-Type:
       - application/xml; charset=UTF-8
       Set-Cookie:
-      - __cfduid=d51fa09da44ff433bdd55c3b89e91f8071593791717; expires=Sun, 02-Aug-20
-        15:55:17 GMT; path=/; domain=.trumail.io; HttpOnly; SameSite=Lax; Secure
+      - __cfduid=d7badf595032d748a99cf2ce3202468191604726099; expires=Mon, 07-Dec-20
+        05:14:59 GMT; path=/; domain=.trumail.io; HttpOnly; SameSite=Lax; Secure
       X-Powered-By:
       - PHP/7.3.11
       Access-Control-Allow-Origin:
@@ -46,23 +46,27 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=0
       Last-Modified:
-      - Fri, 03 Jul 2020 15:55:17 GMT
+      - Sat, 07 Nov 2020 05:15:00 GMT
       Cf-Cache-Status:
       - DYNAMIC
       Cf-Request-Id:
-      - 03b6fcb9a80000ef0622a76200000001
+      - 0642ba27c10000d529670e1000000001
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=2Y1hN%2FjbrQtSoPpzYt93t8mrfmL3gI72ejKuzapeMeYmrtGUb8tDNMTDEmW2T9%2Fg6E0nOIflE9GgDQgB4eExirpR%2BxC2wkagN0WAmzwq2%2FyZaYcr0PJXpsKyHg%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 5ad1ca3c4f59ef06-MIA
+      - 5ee492ec69add529-MIA
       Content-Encoding:
       - gzip
     body:
       encoding: UTF-8
       string: |-
         <?xml version="1.0"?>
-        <lookup><Message>Rate limit exceeded - If you'd like a higher request volume please contact sales@emailchecker.com</Message></lookup>
-  recorded_at: Fri, 03 Jul 2020 15:55:20 GMT
+        <lookup><address>test@gmail.com</address><username>test</username><domain>gmail.com</domain><md5Hash>1aedb8d9dc4751e229a335e371db8058</md5Hash><suggestion/><validFormat>true</validFormat><deliverable>false</deliverable><fullInbox>false</fullInbox><hostExists>true</hostExists><catchAll>false</catchAll><gravatar>false</gravatar><role>false</role><disposable>false</disposable><free>true</free></lookup>
+  recorded_at: Sat, 07 Nov 2020 05:15:01 GMT
 recorded_with: VCR 6.0.0

@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko
+      - Mozilla/5.0 (X11; Linux x86_64; rv:65.0) Gecko/20100101 Firefox/65.0
       Expect:
       - ''
   response:
@@ -17,12 +17,12 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Fri, 03 Jul 2020 15:55:17 GMT
+      - Sat, 07 Nov 2020 05:14:59 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Set-Cookie:
-      - __cfduid=d66b4ba7d48813eb507f4e89b5a7a8cc71593791714; expires=Sun, 02-Aug-20
-        15:55:14 GMT; path=/; domain=.trumail.io; HttpOnly; SameSite=Lax; Secure
+      - __cfduid=d8091380a56873f03a6a8fdeab00520051604726098; expires=Mon, 07-Dec-20
+        05:14:58 GMT; path=/; domain=.trumail.io; HttpOnly; SameSite=Lax; Secure
       X-Powered-By:
       - PHP/7.3.11
       Access-Control-Allow-Origin:
@@ -45,22 +45,25 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=0
       Last-Modified:
-      - Fri, 03 Jul 2020 15:55:15 GMT
+      - Sat, 07 Nov 2020 05:14:58 GMT
       Cf-Cache-Status:
       - DYNAMIC
       Cf-Request-Id:
-      - 03b6fcae3e0000ef06229f3200000001
+      - 0642ba21580000d5293f1fb000000001
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=iZyJ5fxrm6PVBaOYBTx8UYRdgM3KmU2m1B3c5jdX0k8Z6p8BmHGrKfOiIkP8BoUqRHrWleVAsKzAqhTDegMI1CGCf7hTDxBKfeWUhMfDF2JFjI5iBh0FyU2shQ%3D%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 5ad1ca29fb24ef06-MIA
+      - 5ee492e22b91d529-MIA
       Content-Encoding:
       - gzip
     body:
       encoding: UTF-8
-      string: '{"Message":"Rate limit exceeded - If you''d like a higher request volume
-        please contact sales@emailchecker.com"}'
-  recorded_at: Fri, 03 Jul 2020 15:55:17 GMT
+      string: '{"address":"test@gmail.com","username":"test","domain":"gmail.com","md5Hash":"1aedb8d9dc4751e229a335e371db8058","suggestion":"","validFormat":true,"deliverable":false,"fullInbox":false,"hostExists":true,"catchAll":false,"gravatar":false,"role":false,"disposable":false,"free":true}'
+  recorded_at: Sat, 07 Nov 2020 05:14:59 GMT
 recorded_with: VCR 6.0.0
