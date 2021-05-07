@@ -6,8 +6,8 @@ require 'typhoeus'
 module Trumail
   class Lookup
 
-    DEFAULT_HOST ||= 'https://api.trumail.io'
-    DEFAULT_FORMAT ||= :json
+    DEFAULT_HOST = 'https://api.trumail.io'
+    DEFAULT_FORMAT = :json
 
     attr_reader :email, :hash, :host, :format, :response
 
